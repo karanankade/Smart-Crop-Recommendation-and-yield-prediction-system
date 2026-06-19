@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Left Leaf Gradient: Deep emerald to bright mint -->
+    <linearGradient id="leftLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#10B981" />
+      <stop offset="100%" stop-color="#059669" />
+    </linearGradient>
+
+    <!-- Right Leaf / Analytics Gradient: Electric blue to indigo -->
+    <linearGradient id="rightLeafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6" />
+      <stop offset="100%" stop-color="#1D4ED8" />
+    </linearGradient>
+
+    <!-- Stem / Tech Line Gradient: Glowing white to transparent -->
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0.9" />
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0.2" />
+    </linearGradient>
+
+    <!-- Tech Node Gradient: Soft gold/orange for yield/harvest -->
+    <linearGradient id="nodeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="6" stdDeviation="10" flood-color="#0F172A" flood-opacity="0.12" />
+    </filter>
+  </defs>
+
+  <!-- Glowing background aura (very subtle) -->
+  <circle cx="256" cy="256" r="210" fill="none" stroke="#10B981" stroke-width="2" stroke-opacity="0.15" stroke-dasharray="8 6" />
+  <circle cx="256" cy="256" r="230" fill="none" stroke="#3B82F6" stroke-width="1.5" stroke-opacity="0.1" />
+
+  <!-- Main Tech Leaf Group -->
+  <g filter="url(#shadow)">
+    <!-- Left Leaf (Agriculture - Emerald Green) -->
+    <path d="M256,60 
+             C150,150 130,320 220,410 
+             C240,430 256,440 256,440 
+             C256,440 270,360 260,250 
+             C255,200 245,130 256,60 Z" 
+          fill="url(#leftLeafGrad)" />
+
+    <!-- Right Leaf (Analytics - Blue Bars & Connections) -->
+    <!-- Inner Bar (Highest) -->
+    <path d="M276,120 
+             C295,120 310,135 310,155 
+             L310,350 
+             C310,365 295,380 276,380 
+             C265,380 256,370 256,350 
+             L256,155 
+             C256,135 265,120 276,120 Z" 
+          fill="url(#rightLeafGrad)" opacity="0.95" />
+
+    <!-- Middle Bar -->
+    <path d="M315,190 
+             C330,190 345,205 345,225 
+             L345,380 
+             C345,395 330,410 315,410 
+             C300,410 290,395 290,380 
+             L290,225 
+             C290,205 300,190 315,190 Z" 
+          fill="url(#rightLeafGrad)" opacity="0.8" />
+
+    <!-- Outer Bar (Lowest) -->
+    <path d="M355,260 
+             C370,260 380,275 380,295 
+             L380,390 
+             C380,405 370,420 355,420 
+             C340,420 330,405 330,390 
+             L330,295 
+             C330,275 340,260 355,260 Z" 
+          fill="url(#rightLeafGrad)" opacity="0.65" />
+    
+    <!-- Central Glowing Stem -->
+    <path d="M256,440 L256,80" stroke="url(#stemGrad)" stroke-width="6" stroke-linecap="round" />
+
+    <!-- Tech Circuit Lines branching from the stem (Green side) -->
+    <path d="M256,360 L210,330 L170,340" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+    <path d="M256,270 L195,235 L195,190" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+    <path d="M256,180 L215,140" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Tech Circuit Lines branching to Blue side (connecting bars) -->
+    <path d="M256,310 L290,310 L315,290" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+    <path d="M256,220 L315,220 L355,280" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" opacity="0.8" />
+
+    <!-- Glowing Node Dots (representing smart data points) -->
+    <!-- On Green Side -->
+    <circle cx="170" cy="340" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" />
+    <circle cx="195" cy="190" r="8" fill="#10B981" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" />
+    <circle cx="215" cy="140" r="7" fill="#10B981" stroke="#FFFFFF" stroke-width="1.5" filter="url(#glow)" />
+
+    <!-- On Blue Side / Top of Bars -->
+    <circle cx="310" cy="155" r="8" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" />
+    <circle cx="345" cy="225" r="8" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" />
+    <circle cx="380" cy="295" r="8" fill="#3B82F6" stroke="#FFFFFF" stroke-width="2" filter="url(#glow)" />
+
+    <!-- Main Peak/Harvest Node (Golden / Yield prediction spark) -->
+    <circle cx="256" cy="80" r="10" fill="url(#nodeGrad)" stroke="#FFFFFF" stroke-width="2.5" filter="url(#glow)" />
+  </g>
+</svg>
